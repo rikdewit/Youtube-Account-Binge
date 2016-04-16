@@ -2,7 +2,7 @@
 Looking for all/old videos of a user on Youtube is a pain, that's why I created this using python and PyQt.
 
 
-User Instructions:
+>User Instructions:
 >1.extract
 
 >2.run Youtube.exe
