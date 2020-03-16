@@ -75,7 +75,7 @@ def usernameChange():
 
 if __name__ == "__main__":
     import sys
-    from PyQt4 import QtGui,QtCore
+    from PyQt5 import QtWidgets,QtCore
     import window1
     import config
     import youtube
@@ -124,8 +124,8 @@ if __name__ == "__main__":
 
 
 
-    app = QtGui.QApplication(sys.argv)
-    MainWindow = QtGui.QMainWindow()
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
     ui = window1.Ui_window1()
     ui.setupUi(MainWindow)
     MainWindow.show()
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     file.close()
     ui.lineEdit.setText(config.Username)
 
-    app.setWindowIcon(QtGui.QIcon(config.window1IconFile))
+    app.setWindowIcon(QtWidgets.QIcon(config.window1IconFile))
 
 
 

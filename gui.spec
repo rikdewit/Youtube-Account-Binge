@@ -1,19 +1,20 @@
-# -*- mode: python -*-
+# -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
 
 
 a = Analysis(['gui.py'],
-             pathex=['C:\\Users\\Rik de Wit\\Google Drive\\python\\casey'],
-             binaries=None,
-             datas=None,
+             pathex=['/home/rik/Youtube-Account-Binge'],
+             binaries=[],
+             datas=[],
              hiddenimports=[],
-             hookspath=None,
-             runtime_hooks=None,
-             excludes=None,
-             win_no_prefer_redirects=None,
-             win_private_assemblies=None,
-             cipher=block_cipher)
+             hookspath=[],
+             runtime_hooks=[],
+             excludes=[],
+             win_no_prefer_redirects=False,
+             win_private_assemblies=False,
+             cipher=block_cipher,
+             noarchive=False)
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
@@ -21,8 +22,12 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
+          [],
           name='gui',
           debug=False,
-          strip=None,
+          bootloader_ignore_signals=False,
+          strip=False,
           upx=True,
+          upx_exclude=[],
+          runtime_tmpdir=None,
           console=False )
