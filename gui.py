@@ -67,7 +67,7 @@ def usernameChange():
     file.close()
     config.Username = ui.lineEdit.text()
 
-    print config.Username
+    print(config.Username)
 
 
 
@@ -88,23 +88,23 @@ if __name__ == "__main__":
         def run(self):
 
             window1.Ui_window1.hasclicked = True
-            print config.Username + '2'
+            print(config.Username + '2')
             ui.label.setText('Fetching...')
             ui.label.show()
             youtube.getid(config.Username)
 
 
-            print'showing'
+            print('showing')
             if youtube.haveconnection:
 
 
                 youtube.getuploads()
                 if not youtube.data:
-                    print 'no data'
+                    print('no data')
                     ui.label.setText('No Uploads')
                 try:
                     if youtube.completedRetrieve:
-                        print 'cash'
+                        print('cash')
                         ui.label.hide()
                         showTitles()
                         cashData()

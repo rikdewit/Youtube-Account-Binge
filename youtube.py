@@ -1,4 +1,4 @@
-import urllib, json
+import urllib.request, urllib.parse, urllib.error, json
 import config
 import webbrowser
 import sys,os
@@ -13,7 +13,7 @@ def getid(Username):
     global f_forid
     global uploadsid
     global data
-    print Username + '3'
+    print(Username + '3')
 
     urlforid = 'https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=%s&key=%s' % (
     Username, config.Api)
@@ -27,7 +27,7 @@ def getid(Username):
             data = 1
             return 1
         except(IndexError):
-            print 'there seems to be nothing here!'
+            print('there seems to be nothing here!')
             data = 0
     else:
         data = 0
@@ -61,11 +61,11 @@ def getuploads():
             except(IndexError):
                 try:
                     nextPageToken = json.loads(f_foruploads)['nextPageToken']
-                    print nextPageToken
+                    print(nextPageToken)
                 except(KeyError):
-                    print 'no nextPageToken'
+                    print('no nextPageToken')
                     completedRetrieve = 1
-                    print completedRetrieve
+                    print(completedRetrieve)
                     break
 
                 urlforuploads = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=%s&maxResults=%s&pageToken=%s&key=%s" % (
@@ -91,12 +91,12 @@ def getuploads():
 def connect(url):
     global haveconnection
     try:
-        f = urllib.urlopen(url).read()
+        f = urllib.request.urlopen(url).read()
         haveconnection = 1
         return f
     except(IOError):
         haveconnection = 0
-        print 'no internet connection'
+        print('no internet connection')
         return 0
 
 def linkVideo(index):
